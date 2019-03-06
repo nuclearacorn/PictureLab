@@ -98,5 +98,17 @@ public class IntArrayWorker
       }
     }
   }
+  
+  public int getCount(int n)
+  {
+      int count = 0;
+      for (int[] row : matrix)
+        for (int pixel : row)
+        {
+            if (pixel==n)
+                count++;
+        }
+  return count;
+  }
  
 }

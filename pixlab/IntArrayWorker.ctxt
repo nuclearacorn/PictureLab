@@ -18,4 +18,6 @@ comment5.text=\r\n\ print\ the\ values\ in\ the\ array\ in\ rows\ and\ columns\r
 comment6.params=
 comment6.target=void\ fillPattern1()
 comment6.text=\ \r\n\ fill\ the\ array\ with\ a\ pattern\r\n
-numComments=7
+comment7.params=n
+comment7.target=int\ getCount(int)
+numComments=8
