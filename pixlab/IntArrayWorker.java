@@ -110,5 +110,30 @@ public class IntArrayWorker
         }
   return count;
   }
+  
+  public int getLargest()
+  {
+      int largest = matrix[0][0];
+      for (int [] row : matrix)
+        for (int a : row)
+        {
+            if (a > largest)
+            {
+                largest = a;
+            }
+        }
+  
+  return largest;    
+  }
+  
+  public int getTolTotal(int n)
+  {
+      int total = 0;
+      for (int i = 0; i < matrix.length; i++)
+      {
+          total+=matrix[i][n];
+      }
+  return total;
+  }
  
 }
