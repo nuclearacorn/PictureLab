@@ -126,7 +126,7 @@ public class IntArrayWorker
   return largest;    
   }
   
-  public int getTolTotal(int n)
+  public int getColTotal(int n)
   {
       int total = 0;
       for (int i = 0; i < matrix.length; i++)
