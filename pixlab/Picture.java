@@ -129,6 +129,51 @@ public class Picture extends SimplePicture
       zeroGreen();
   }
   
+  public static int getBlue(int value)
+  {
+    int blue = value & 0xff;
+    return blue;
+  }
+  
+  public static int getGreen(int value)
+  {
+    int green = value & 0xff;
+    return green;
+  }
+  
+  public static int getRed(int value)
+  {
+    int red = value & 0xff;
+    return red;
+  }
+  
+  public void Negate()
+  {
+      Pixel [][] picture = this.getPixels2D();
+      for (Pixel[] rowArray : picture)
+      {
+          for (Pixel p : rowArray)
+          {
+              p.setRed(255);
+              p.setGreen(255);
+              p.setBlue(255);
+            }
+      }
+    }
+    
+  public void grayscale()
+  {
+      Pixel [][] picture = this.getPixels2D();
+      for (Pixel[] rowArray : picture)
+      {
+          for (Pixel p : rowArray)
+          {
+              int average = getRed() + getGreen() + getBlue();
+              
+            }
+      }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -260,4 +305,22 @@ public class Picture extends SimplePicture
     beach.explore();
   }
   
+  
+  public static int getBlue(int value)
+  {
+    int blue = value & 0xff;
+    return blue;
+  }
+  
+  public static int getGreen(int value)
+  {
+    int green = value & 0xff;
+    return green;
+  }
+  
+  public static int getRed(int value)
+  {
+    int red = value & 0xff;
+    return red;
+  }
 } // this } is the end of class Picture, put all new methods before this

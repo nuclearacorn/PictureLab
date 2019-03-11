@@ -63,6 +63,14 @@ public class PictureTester
       beach.explore();
   }
   
+  public static void testNegate()
+  {
+      Picture beach = new Picture("beach.jpg");
+      
+      beach.Negate();
+      beach.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -74,7 +82,7 @@ public class PictureTester
     testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
+    testNegate();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
