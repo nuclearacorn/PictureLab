@@ -129,23 +129,7 @@ public class Picture extends SimplePicture
       zeroGreen();
   }
   
-  public static int getBlue(int value)
-  {
-    int blue = value & 0xff;
-    return blue;
-  }
   
-  public static int getGreen(int value)
-  {
-    int green = value & 0xff;
-    return green;
-  }
-  
-  public static int getRed(int value)
-  {
-    int red = value & 0xff;
-    return red;
-  }
   
   public void Negate()
   {
@@ -168,7 +152,7 @@ public class Picture extends SimplePicture
       {
           for (Pixel p : rowArray)
           {
-              int average = getRed() + getGreen() + getBlue();
+              //int average = getRed() + getGreen() + getBlue();
               
             }
       }
@@ -189,6 +173,23 @@ public class Picture extends SimplePicture
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][width - 1 - col];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    } 
+  }
+  
+  public void mirrorVerticalRightToLeft()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int width = pixels[0].length;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < width / 2; col++)
+      {
+        rightPixel = pixels[row][col];
+        leftPixel = pixels[row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
       }
     } 
@@ -306,21 +307,5 @@ public class Picture extends SimplePicture
   }
   
   
-  public static int getBlue(int value)
-  {
-    int blue = value & 0xff;
-    return blue;
-  }
   
-  public static int getGreen(int value)
-  {
-    int green = value & 0xff;
-    return green;
-  }
-  
-  public static int getRed(int value)
-  {
-    int red = value & 0xff;
-    return red;
-  }
 } // this } is the end of class Picture, put all new methods before this
