@@ -42,6 +42,14 @@ public class PictureTester
       redMotorcycle.explore();
   }
   
+  public static void testMirrorDiagonal()
+  {
+      Picture redMotorcycle = new Picture("redMotorcycle.jpg");
+      redMotorcycle.explore();
+      redMotorcycle.mirrorDiagonal();
+      redMotorcycle.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -106,7 +114,7 @@ public class PictureTester
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+    testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
