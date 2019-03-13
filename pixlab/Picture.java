@@ -254,6 +254,25 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void mirrorArms()
+  {
+    int mirrorPoint = 190;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    for (int row = 159; row < 192; row++)
+    {
+        for (int col = 181; col < 292; col++)
+        {
+            leftPixel = pixels[row][col];
+            rightPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+            rightPixel.setColor(leftPixel.getColor());
+        }
+    }
+  }
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -290,13 +309,13 @@ public class Picture extends SimplePicture
   {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    this.copy(flower1,0,10);
+    this.copy(flower2,100,20);
+    this.copy(flower1,200,30);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
+    this.copy(flowerNoBlue,300,40);
+    this.copy(flower1,400,50);
     this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
