@@ -75,6 +75,12 @@ public class PictureTester
     canvas.explore();
   }
   
+  public static void testCopy()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.copy();
+    canvas.explore();
+  }
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
