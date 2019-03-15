@@ -372,6 +372,7 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+    
   }
   
   
